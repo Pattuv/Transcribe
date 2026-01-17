@@ -1,40 +1,84 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+const IGNORE_DIRS = new Set([
+  "node_modules",
+  ".git",
+  ".vscode",
+  "dist",
+  "build",
+  "out",
+  "__pycache__",
+  ".venv",
+]);
 
-/**
- * @param {vscode.ExtensionContext} context
- */
-function activate(context) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log(
-    "Welcome to Transcribe. Use the Copy File Structure button to paste your file structure into your favorite AI tools and get building.",
-  );
+function buildTree(dirPath, indent = "") {
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  let output = "";
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with  registerCommand
-  // The commandId parameter must match the command field in package.json
-  const disposable = vscode.commands.registerCommand(
-    "transcribe.copyStructure",
-    function () {
-      // The code you place here will be executed every time your command is executed
-      vscode.window.showInformationMessage("File Structure Copied!");
-    },
-  );
+  for (const entry of entries) {
+    if (entry.isDirectory() && IGNORE_DIRS.has(entry.name)) continue;
 
-  context.subscriptions.push(disposable);
+    const displayName = entry.isDirectory() ? `${entry.name}/` : entry.name;
+    output += `${indent}${displayName}\n`;
+
+    if (entry.isDirectory()) {
+      output += buildTree(path.join(dirPath, entry.name), indent + "  ");
+    }
+  }
+
+  return output;
 }
 
-// This method is called when your extension is deactivated
+async function copyStructure() {
+  const workspaceFolders = vscode.workspace.workspaceFolders;
+  if (!workspaceFolders) {
+    vscode.window.showErrorMessage("No project folder is open.");
+    return;
+  }
+
+  const rootFolder = workspaceFolders[0];
+  const rootPath = rootFolder.uri.fsPath;
+  const rootName = rootFolder.name;
+
+  const treeText = `${rootName}/\n${buildTree(rootPath, "  ")}`;
+  const finalText =
+    treeText + "\n Structure grabbed from Transcribe Extension.";
+
+  await vscode.env.clipboard.writeText(finalText);
+  vscode.window.showInformationMessage("File structure copied to clipboard!");
+}
+
+// Tree item for the view
+class TranscribeItem extends vscode.TreeItem {
+  constructor() {
+    super("Copy File Structure", vscode.TreeItemCollapsibleState.None);
+    this.command = {
+      command: "transcribe.copyStructure",
+      title: "Copy File Structure",
+    };
+    this.contextValue = "transcribeItem";
+  }
+}
+
+// Tree data provider
+class TranscribeProvider {
+  getTreeItem(element) {
+    return element;
+  }
+
+  getChildren() {
+    return [new TranscribeItem()];
+  }
+}
+
+function activate(context) {
+  context.subscriptions.push(
+    vscode.commands.registerCommand("transcribe.copyStructure", copyStructure),
+  );
+}
+
 function deactivate() {}
 
-module.exports = {
-  activate,
-  deactivate,
-};
+module.exports = { activate, deactivate };

@@ -9,15 +9,28 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pattuv/Transcribe"
+  },
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
         "command": "transcribe.copyStructure",
-        "title": "Copy Structure"
+        "title": "Copy File Structure"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "transcribe.copyStructure",
+          "when": "explorerViewletVisible",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",
