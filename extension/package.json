@@ -48,7 +48,7 @@
       },
       {
         "command": "transcribe.editIgnoreSettings",
-        "title": "Configure Ignored Paths"
+        "title": "Configure Ignored Paths for Transcribe"
       }
     ],
     "menus": {
