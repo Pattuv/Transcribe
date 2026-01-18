@@ -10,16 +10,16 @@ email pratyushv09@gmail.com for any tips, feedbacks, or bugs.
 
 ### Copy entire project structure in one click
 
-![Context Menu](assets/screenshots/context1.png)
+![Context Menu](https://github.com/Pattuv/Transcribe/blob/main/extension/assets/screenshots/context1.png?raw=true)
 
 ### Copy specific folder structures
 
-![Context Menu2](assets/screenshots/context2.png)
+![Context Menu2](https://github.com/Pattuv/Transcribe/blob/main/extension/assets/screenshots/context2.png?raw=true)
 
 ### Clean AI-ready output
 
-![Output Example](assets/screenshots/output.png)
+![Output Example](https://github.com/Pattuv/Transcribe/blob/main/extension/assets/screenshots/output.png?raw=true)
 
 ### Edit ignored folders using IgnoreDir Settings
 
-![Settings Example](assets/screenshots/settings.png)
+![Settings Example](https://github.com/Pattuv/Transcribe/blob/main/extension/assets/screenshots/settings.png?raw=true)
