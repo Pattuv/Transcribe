@@ -6,6 +6,20 @@ Very simple but solves a real pain point. Your welcome.
 
 email pratyushv09@gmail.com for any tips, feedbacks, or bugs.
 
-# 1/17/25
+## Features
 
-Added both specific path copy and ignore settings. First official build, v.1.0.0
+### Copy entire project structure in one click
+
+![Context Menu](assets/screenshots/context1.png)
+
+### Copy specific folder structures
+
+![Context Menu2](assets/screenshots/context2.png)
+
+### Clean AI-ready output
+
+![Output Example](assets/screenshots/output.png)
+
+### Edit ignored folders using IgnoreDir Settings
+
+![Settings Example](assets/screenshots/settings.png)

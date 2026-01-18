@@ -3,6 +3,7 @@
   "displayName": "Transcribe",
   "description": "One-click text export of your project file structure for AI tools",
   "publisher": "Pattuv",
+  "icon": "assets/logo.png",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.108.1"
