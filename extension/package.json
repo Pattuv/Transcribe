@@ -6,7 +6,7 @@
   "icon": "assets/logo.png",
   "version": "1.0.2",
   "engines": {
-    "vscode": "^1.108.1"
+    "vscode": "^1.44.0"
   },
   "categories": [
     "Other"
