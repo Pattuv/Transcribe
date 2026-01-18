@@ -2,6 +2,7 @@
   "name": "transcribe",
   "displayName": "Transcribe",
   "description": "One-click text export of your project file structure for AI tools",
+  "publisher": "Pattuv",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.108.1"
@@ -18,15 +19,24 @@
   "contributes": {
     "commands": [
       {
-        "command": "transcribe.copyStructure",
-        "title": "Copy File Structure"
+        "command": "transcribe.copyWholeStructure",
+        "title": "Copy File Structure of Whole Project"
+      },
+      {
+        "command": "transcribe.copySpecificStructure",
+        "title": "Copy File Structure of This Folder"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "transcribe.copyStructure",
+          "command": "transcribe.copyWholeStructure",
           "when": "explorerViewletVisible",
+          "group": "navigation"
+        },
+        {
+          "command": "transcribe.copySpecificStructure",
+          "when": "explorerResourceIsFolder",
           "group": "navigation"
         }
       ]

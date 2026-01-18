@@ -31,7 +31,7 @@ function buildTree(dirPath, indent = "") {
   return output;
 }
 
-async function copyStructure() {
+async function copyWholeStructure() {
   const workspaceFolders = vscode.workspace.workspaceFolders;
   if (!workspaceFolders) {
     vscode.window.showErrorMessage("No project folder is open.");
@@ -50,35 +50,44 @@ async function copyStructure() {
   vscode.window.showInformationMessage("File structure copied to clipboard!");
 }
 
-// Tree item for the view
-class TranscribeItem extends vscode.TreeItem {
-  constructor() {
-    super("Copy File Structure", vscode.TreeItemCollapsibleState.None);
-    this.command = {
-      command: "transcribe.copyStructure",
-      title: "Copy File Structure",
-    };
-    this.contextValue = "transcribeItem";
-  }
-}
-
-// Tree data provider
-class TranscribeProvider {
-  getTreeItem(element) {
-    return element;
+async function copySpecificStructure(uri) {
+  const workspaceFolders = vscode.workspace.workspaceFolders;
+  if (!workspaceFolders) {
+    vscode.window.showErrorMessage("No project folder is open.");
+    return;
   }
 
-  getChildren() {
-    return [new TranscribeItem()];
-  }
-}
+  const folderPath = uri.fsPath;
+  const folderName = path.basename(folderPath);
 
-function activate(context) {
-  context.subscriptions.push(
-    vscode.commands.registerCommand("transcribe.copyStructure", copyStructure),
+  const treeText = `${folderName}/\n${buildTree(folderPath, "  ")}`;
+  const finalText = treeText + "\nStructure grabbed from Transcribe Extension.";
+
+  await vscode.env.clipboard.writeText(finalText);
+  vscode.window.showInformationMessage(
+    "Current folder structure copied to clipboard!",
   );
 }
 
-function deactivate() {}
+function activate(context) {
+  // First command: copy entire project
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "transcribe.copyWholeStructure",
+      copyWholeStructure,
+    ),
+  );
+  // Second command: copy current folder (from context menu)
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "transcribe.copySpecificStructure",
+      copySpecificStructure,
+    ),
+  );
+}
+
+function deactivate() {
+  vscode.window.showInformationMessage("Transcribe has been deactivated.");
+}
 
 module.exports = { activate, deactivate };
