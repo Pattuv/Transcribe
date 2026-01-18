@@ -2,8 +2,10 @@
 
 All notable changes to the "transcribe" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+# 1/17/25
 
-## [Unreleased]
+Added both specific path copy and ignore settings. First official build, v.1.0.0
 
-- Initial release
+# 1/18/25
+
+Updated Readme and logo. Published to Marketplace.
