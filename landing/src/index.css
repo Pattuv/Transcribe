@@ -5,4 +5,76 @@ body {
   font-family: "Instrument Sans", sans-serif;
   font: "Instrument Sans";
   background-color: #0f0f0f;
+  color: white !important;
+}
+
+.custom-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  cursor: pointer;
+}
+
+.brand-btn {
+  position: relative;
+}
+
+.logo-img {
+  position: relative;
+  z-index: 0;
+}
+
+.brand-text {
+  position: relative;
+  z-index: 10;
+}
+
+.brand-btn:hover {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.brand-btn:hover img {
+  transform: rotate(360deg);
+}
+
+.brand-btn img {
+  transition: transform 0.6s ease;
+}
+
+.brand-btn {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-btn:hover {
+  background: white;
+  color: black !important;
+}
+
+.github-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* only scale */
+}
+
+.github-btn:hover {
+  transform: scale(1.3); /* smooth scaling */
+}
+
+/* remove default focus outline too */
+.github-btn:focus {
+  outline: none;
 }

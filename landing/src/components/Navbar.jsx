@@ -1,27 +1,27 @@
+import Button from "./Button";
+import logo from "../assets/logo.svg";
+
 function Navbar() {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm p-5 px-10">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="brand-btn btn btn-ghost text-lg font-semibold">
+            <img src={logo} className="logo-img w-7 -mr-1" alt="" />
+            <span className="brand-text">transcribe</span>
+          </a>
         </div>
-        <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block h-5 w-5 stroke-current"
-            >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>{" "}
-            </svg>
-          </button>
+        <div className="flex-none flex items-center gap-3">
+          <a
+            className="github-btn text-2xl"
+            href="https://github.com/Pattuv/Transcribe"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="bi bi-github"></i>
+          </a>
+
+          <Button />
         </div>
       </div>
     </div>
