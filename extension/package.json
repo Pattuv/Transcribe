@@ -3,7 +3,7 @@
   "displayName": "Transcribe",
   "description": "One-click text export of your project file structure for AI tools",
   "publisher": "Pattuv",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.108.1"
   },
@@ -17,6 +17,26 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Transcribe Extension Settings",
+      "properties": {
+        "transcribe.ignoreDirs": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            ".vscode",
+            "dist",
+            "build",
+            "out",
+            "__pycache__",
+            ".venv"
+          ],
+          "description": "List of directory names to ignore when copying file structures. \n Edit the ignoreDirs array and list or remove the exact case-sensitive names of the directories you want to ignore or include (which are all listed in string format)."
+        }
+      }
+    },
     "commands": [
       {
         "command": "transcribe.copyWholeStructure",
@@ -25,6 +45,10 @@
       {
         "command": "transcribe.copySpecificStructure",
         "title": "Copy File Structure of This Folder"
+      },
+      {
+        "command": "transcribe.editIgnoreSettings",
+        "title": "Configure Ignored Paths"
       }
     ],
     "menus": {
@@ -32,12 +56,17 @@
         {
           "command": "transcribe.copyWholeStructure",
           "when": "explorerViewletVisible",
-          "group": "navigation"
+          "group": "1_transcribe"
         },
         {
           "command": "transcribe.copySpecificStructure",
           "when": "explorerResourceIsFolder",
-          "group": "navigation"
+          "group": "1_transcribe"
+        },
+        {
+          "command": "transcribe.editIgnoreSettings",
+          "when": "explorerViewletVisible",
+          "group": "1_transcribe.next"
         }
       ]
     }

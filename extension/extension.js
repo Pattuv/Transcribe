@@ -14,11 +14,14 @@ const IGNORE_DIRS = new Set([
 ]);
 
 function buildTree(dirPath, indent = "") {
+  const config = vscode.workspace.getConfiguration("transcribe");
+  const ignoreDirs = new Set(config.ignoreDirs || []);
+
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
   let output = "";
 
   for (const entry of entries) {
-    if (entry.isDirectory() && IGNORE_DIRS.has(entry.name)) continue;
+    if (entry.isDirectory() && ignoreDirs.has(entry.name)) continue;
 
     const displayName = entry.isDirectory() ? `${entry.name}/` : entry.name;
     output += `${indent}${displayName}\n`;
@@ -69,6 +72,14 @@ async function copySpecificStructure(uri) {
   );
 }
 
+async function openIgnoreSettings() {
+  // Opens the settings UI for the ignoreDirs array
+  await vscode.commands.executeCommand(
+    "workbench.action.openSettings",
+    "transcribe.ignoreDirs",
+  );
+}
+
 function activate(context) {
   // First command: copy entire project
   context.subscriptions.push(
@@ -82,6 +93,13 @@ function activate(context) {
     vscode.commands.registerCommand(
       "transcribe.copySpecificStructure",
       copySpecificStructure,
+    ),
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "transcribe.editIgnoreSettings",
+      openIgnoreSettings,
     ),
   );
 }
