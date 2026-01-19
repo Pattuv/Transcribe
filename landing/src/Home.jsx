@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import tools from "./assets/tools.png";
+import demo from "./assets/demo.mp4"
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -29,6 +30,19 @@ function Home() {
           </button>
         </div>
       </div>
+
+      <div className="my-6 px-9 flex justify-center">
+        <video
+          src={demo}
+          className="rounded-lg w-full max-w-md md:max-w-3xl lg:max-w-4xl"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+
+
 
       <dialog id="downloadmodal" className="modal">
         <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800">
