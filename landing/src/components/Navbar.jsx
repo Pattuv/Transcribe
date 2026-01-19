@@ -48,7 +48,7 @@ function Navbar() {
           </button>
           {isMenuOpen && (
             <div
-              className="mobile-menu absolute right-0 top-full mt-2 bg-[#0f0f0f] border border-white/20 rounded-lg shadow-lg p-4 min-w-[200px] z-50"
+              className="mobile-menu absolute right-0 top-full mt-2 bg-[#0f0f0f] border border-white/20 rounded-lg shadow-lg p-4 min-w-50 z-50"
               onMouseEnter={() => setIsMenuOpen(true)}
               onMouseLeave={() => setIsMenuOpen(false)}
             >
