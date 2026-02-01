@@ -71,7 +71,7 @@ function Navbar() {
                   rel="noreferrer"
                   className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer text-center"
                 >
-                  View my other work
+                  More by me
                 </a>
               </div>
             </div>
