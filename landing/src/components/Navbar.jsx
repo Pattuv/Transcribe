@@ -7,9 +7,12 @@ function Navbar() {
 
   return (
     <div>
-      <div className="bg-[#0f0f0f] navbar bg-base-100 shadow-sm p-5 px-4 md:px-10 text-white">
+      <div className="bg-[#0f0f0f] navbar bg-base-100 shadow-sm p-5 px-4 md:px-10 text-white max-w-7xl mx-auto">
         <div className="flex-1">
-          <a className="brand-btn btn btn-ghost text-base md:text-lg font-semibold" href="/">
+          <a
+            className="brand-btn btn btn-ghost text-base md:text-lg font-semibold"
+            href="/"
+          >
             <img src={logo} className="logo-img w-6 md:w-7 -mr-1" alt="" />
             <span className="brand-text">transcribe</span>
           </a>

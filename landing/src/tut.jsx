@@ -11,9 +11,9 @@ function Tut() {
           </h1>
           <p className="text-sm md:text-base text-gray-300 mt-3 leading-relaxed">
             This page walks you through installing and using{" "}
-            <span className="font-semibold">Transcribe</span> manually, a VS Code
-            extension that copies your project’s file structure in your IDEs.
-            This is necessary for IDEs which do not fully sync with VSCode
+            <span className="font-semibold">Transcribe</span> manually, a VS
+            Code extension that copies your project’s file structure in your
+            IDEs. This is necessary for IDEs which do not fully sync with VSCode
             Marketplace.
           </p>
 
@@ -25,7 +25,9 @@ function Tut() {
           <ol className="list-decimal pl-5 mt-3 text-sm md:text-base text-gray-300 space-y-2">
             <li>Go to the the Transcribe landing page</li>
             <li>
-              <span className="font-semibold">Click Install Manually via VSIX</span>
+              <span className="font-semibold">
+                Click Install Manually via VSIX
+              </span>
             </li>
             <li>Save it somewhere easy to find (Desktop or Downloads)</li>
           </ol>
@@ -42,10 +44,16 @@ function Tut() {
               <span className="font-semibold">Cmd + Shift + P</span> on macOS)
             </li>
             <li>
-              Type: <span className="font-semibold">Extensions: Install from VSIX</span>
+              Type:{" "}
+              <span className="font-semibold">
+                Extensions: Install from VSIX
+              </span>
             </li>
             <li>Select that option from the dropdown</li>
-            <li>Select the <code className="text-gray-200">.vsix</code> file you downloaded</li>
+            <li>
+              Select the <code className="text-gray-200">.vsix</code> file you
+              downloaded
+            </li>
             <li>Reload the editor if prompted</li>
           </ol>
           <p className="text-sm md:text-base text-gray-300 mt-4">
@@ -63,7 +71,9 @@ function Tut() {
           </h2>
           <ol className="list-decimal pl-5 mt-3 text-sm md:text-base text-gray-300 space-y-2">
             <li>Open a project folder</li>
-            <li>Go to the <span className="font-semibold">Explorer</span> sidebar</li>
+            <li>
+              Go to the <span className="font-semibold">Explorer</span> sidebar
+            </li>
             <li>Right-click anywhere inside the Explorer</li>
             <li>
               Click{" "}
@@ -76,9 +86,11 @@ function Tut() {
             The file structure is now copied to your clipboard.
           </p>
 
-          <p className="text-sm md:text-base text-gray-300 mt-4">Example output:</p>
+          <p className="text-sm md:text-base text-gray-300 mt-4">
+            Example output:
+          </p>
           <pre className="mt-3 p-4 rounded-lg border border-white/10 bg-black/30 overflow-x-auto text-xs md:text-sm text-gray-200">
-{`my-project/
+            {`my-project/
   src/
     index.js
     App.jsx
@@ -89,8 +101,8 @@ Structure grabbed from Transcribe Extension.`}
           </pre>
 
           <p className="text-sm md:text-base text-gray-300 mt-4">
-            You can now paste this directly into an AI chat. You can also do this
-            to copy the file structure of a specific folder.
+            You can now paste this directly into an AI chat. You can also do
+            this to copy the file structure of a specific folder.
           </p>
 
           <hr className="border-white/10 my-8" />
@@ -113,19 +125,29 @@ Structure grabbed from Transcribe Extension.`}
             You can customize this.
           </p>
 
-          <h3 className="text-lg md:text-xl font-semibold mt-6">Edit via Settings UI</h3>
+          <h3 className="text-lg md:text-xl font-semibold mt-6">
+            Edit via Settings UI
+          </h3>
           <ol className="list-decimal pl-5 mt-3 text-sm md:text-base text-gray-300 space-y-2">
-            <li>Open <span className="font-semibold">Settings</span></li>
-            <li>Search for <span className="font-semibold">Transcribe</span></li>
-            <li>Edit <span className="font-semibold">Ignore Dirs</span></li>
+            <li>
+              Open <span className="font-semibold">Settings</span>
+            </li>
+            <li>
+              Search for <span className="font-semibold">Transcribe</span>
+            </li>
+            <li>
+              Edit <span className="font-semibold">Ignore Dirs</span>
+            </li>
           </ol>
 
-          <h3 className="text-lg md:text-xl font-semibold mt-6">Edit via settings.json</h3>
+          <h3 className="text-lg md:text-xl font-semibold mt-6">
+            Edit via settings.json
+          </h3>
           <p className="text-sm md:text-base text-gray-300 mt-3">
             Add or modify this array:
           </p>
           <pre className="mt-3 p-4 rounded-lg border border-white/10 bg-black/30 overflow-x-auto text-xs md:text-sm text-gray-200">
-{`"transcribe.ignoreDirs": [
+            {`"transcribe.ignoreDirs": [
   "node_modules",
   ".git",
   ".vscode",
@@ -134,14 +156,14 @@ Structure grabbed from Transcribe Extension.`}
 ]`}
           </pre>
           <p className="text-sm md:text-base text-gray-300 mt-4">
-            Folder names are <span className="font-semibold">case-sensitive</span>.
+            Folder names are{" "}
+            <span className="font-semibold">case-sensitive</span>.
           </p>
 
           <hr className="border-white/10 my-10" />
 
           <p className="text-sm md:text-base text-gray-300 font-semibold">
-            Happy Hacking!{" "}
-            <span className="font-light">-Pratyush Verma</span>
+            Happy Hacking! <span className="font-light">-Pratyush Verma</span>
           </p>
         </div>
       </div>
@@ -150,4 +172,3 @@ Structure grabbed from Transcribe Extension.`}
 }
 
 export default Tut;
-
