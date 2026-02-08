@@ -145,15 +145,74 @@ function Install() {
 
     ),
     Windsurf: (
-      <div>
-        <p>Install Transcribe in Windsurf.</p>
-        <p className="text-gray-400 mt-2">Use the VSIX installer or Extensions panel.</p>
-      </div>
+        <div>
+          <a
+            href="windsurf://extension/Pattuv.transcribe"
+            className="btn bg-white text-black text-sm p-4 font-medium rounded-full transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
+          >
+            Install for Windsurf <i className="bi bi-arrow-up-right"></i>
+          </a>
+
+          <p className="text-sm text-gray-400 my-4">or</p>
+
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText("windsurf install Pattuv.transcribe");
+              const icon = document.getElementById("windsurf-copy-icon");
+              if (icon) {
+                icon.className = "bi bi-check text-green-400 text-lg";
+                setTimeout(() => {
+                  icon.className = "bi bi-clipboard text-gray-400 text-lg";
+                }, 2000);
+              }
+            }}
+            className="w-full bg-black rounded-lg p-2 border border-gray-600 mockcode text-xs flex items-center justify-between cursor-pointer hover:bg-gray-900 transition-colors"
+          >
+            <span className="mockcode mr-3">
+              <span className="text-gray-400">$</span> windsurf install Pattuv.transcribe
+            </span>
+            <i id="windsurf-copy-icon" className="bi bi-clipboard text-gray-400 text-lg"></i>
+          </div>
+
+          <p className="text-xs text-gray-400 mt-3">
+            Paste the command in your terminal. You must have Windsurf CLI installed.
+          </p>
+        </div>
+
     ),
     Antigravity: (
       <div>
-        <p>Install Transcribe in Antigravity.</p>
-        <p className="text-gray-400 mt-2">Use the VSIX installer or Extensions panel.</p>
+        <a
+          href="antigravity://extension/Pattuv.transcribe"
+          className="btn bg-white text-black text-sm p-4 font-medium rounded-full transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
+        >
+          Install for Antigravity <i className="bi bi-arrow-up-right"></i>
+        </a>
+
+        <p className="text-sm text-gray-400 my-4">or</p>
+
+        <div
+          onClick={() => {
+            navigator.clipboard.writeText("antigravity install Pattuv.transcribe");
+            const icon = document.getElementById("antigravity-copy-icon");
+            if (icon) {
+              icon.className = "bi bi-check text-green-400 text-lg";
+              setTimeout(() => {
+                icon.className = "bi bi-clipboard text-gray-400 text-lg";
+              }, 2000);
+            }
+          }}
+          className="w-full bg-black rounded-lg p-2 border border-gray-600 mockcode text-xs flex items-center justify-between cursor-pointer hover:bg-gray-900 transition-colors"
+        >
+          <span className="mockcode mr-3">
+            <span className="text-gray-400">$</span> antigravity install Pattuv.transcribe
+          </span>
+          <i id="antigravity-copy-icon" className="bi bi-clipboard text-gray-400 text-lg"></i>
+        </div>
+
+        <p className="text-xs text-gray-400 mt-3">
+          Paste the command in your terminal. You must have Antigravity CLI installed.
+        </p>
       </div>
     ),
     Manual: (
@@ -240,7 +299,7 @@ function Install() {
         <div className="px-6 py-4 border-b border-gray-800">
           <h3 className="font-semibold text-lg">Install Transcribe</h3>
           <p className="text-xs text-gray-400 font-light mt-1">
-            Select your IDE below. If none of the options work, try the manual installation guide.
+            Select your IDE below. If none of the options work, try Manual Installation.
           </p>
         </div>
 
