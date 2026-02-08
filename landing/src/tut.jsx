@@ -22,15 +22,14 @@ function Tut() {
           <h2 className="text-xl md:text-2xl font-semibold">
             Step 1: Download the VSIX File
           </h2>
-          <ol className="list-decimal pl-5 mt-3 text-sm md:text-base text-gray-300 space-y-2">
-            <li>Go to the the Transcribe landing page</li>
-            <li>
-              <span className="font-semibold">
-                Click Install Manually via VSIX
-              </span>
-            </li>
-            <li>Save it somewhere easy to find (Desktop or Downloads)</li>
-          </ol>
+            <a
+            href="https://github.com/Pattuv/Transcribe/releases/download/v.1.0.3/transcribe-1.0.3.vsix"
+            target="_blank"
+            rel="noreferrer"
+            className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+          >
+            Install Manually via VSIX
+          </a>
 
           <hr className="border-white/10 my-8" />
 
@@ -65,6 +64,9 @@ function Tut() {
           <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-semibold">
             Usage Guide
           </h1>
+          <p className="text-sm md:text-base text-gray-300 mt-3 leading-relaxed">
+            These are the official instructions for using Transcribe.
+          </p>
 
           <h2 className="text-xl md:text-2xl font-semibold mt-6">
             Copy the Entire Project Structure
