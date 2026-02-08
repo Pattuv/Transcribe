@@ -12,6 +12,11 @@ html, body, #root {
   height: auto;
 }
 
+.mockcode {
+  font-family: monospace, sans-serif;
+  color: white;
+}
+
 /* Change selected text background and text color */
 ::selection {
   background: #ffffff; /* whatever background you want */

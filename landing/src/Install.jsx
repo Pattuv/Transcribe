@@ -12,6 +12,7 @@ import logo from "./assets/logo.svg";
 
 
 
+
 function Install() {
   const tabs = [
     "VS Code",
@@ -33,24 +34,114 @@ function Install() {
 
   const tabContent = {
     Cursor: (
-      <div>
-        <Link to="/tut" className="btn bg-white text-black text-sm p-4 font-medium rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install VSIX <i class="bi bi-arrow-up-right"></i></Link>
+        <div>
+          <a
+            href="cursor:extension/pattuv.transcribe"
+            className="btn bg-white text-black text-sm p-4 font-medium rounded-full transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
+          >
+            Install for Cursor <i className="bi bi-arrow-up-right"></i>
+          </a>
 
+          <p className="text-sm text-gray-400 my-4">or</p>
 
-      </div>
+          {/* Entire code div as a button */}
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText("cursor install Pattuv.transcribe");
+              const icon = document.getElementById("cursor-copy-icon");
+              if (icon) {
+                icon.className = "bi bi-check text-green-400 text-lg";
+                setTimeout(() => {
+                  icon.className = "bi bi-clipboard text-gray-400 text-lg";
+                }, 2000);
+              }
+            }}
+            className="w-full bg-black rounded-lg p-2 border border-gray-600  text-xs flex items-center justify-between cursor-pointer hover:bg-gray-900 transition-colors"
+          >
+            <span className="mockcode mr-3">
+              <span className="text-gray-400 mr-1">$</span> cursor install Pattuv.transcribe
+            </span>
+            <i id="cursor-copy-icon" className="bi bi-clipboard text-gray-400 text-lg"></i>
+          </div>
+
+          <p className="text-xs text-gray-400 mt-3">
+            Paste the following command in your terminal.  You <br /> must have Cursor CLI installed.
+          </p>
+        </div>
+
     ),
     "VS Code": (
-      <div>
-          <a href="vscode:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full  transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode <i class="bi bi-arrow-up-right"></i></a>
+        <div>
+          <a
+            href="vscode:extension/Pattuv.transcribe"
+            className="btn bg-white text-black text-sm p-4 font-medium rounded-full transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
+          >
+            Install for VSCode <i id="vscode-icon" className="bi bi-arrow-up-right"></i>
+          </a>
 
-      </div>
+          <p className="text-sm text-gray-400 my-4">or</p>
+
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText("code --install-extension Pattuv.transcribe");
+              const icon = document.getElementById("vscode-copy-icon");
+              if (icon) {
+                icon.className = "bi bi-check text-green-400 text-lg";
+                setTimeout(() => {
+                  icon.className = "bi bi-clipboard text-gray-400 text-lg";
+                }, 2000);
+              }
+            }}
+            className="w-full bg-black rounded-lg p-2 border border-gray-600 mockcode text-xs flex items-center justify-between cursor-pointer hover:bg-gray-900 transition-colors"
+          >
+            <span className="mockcode mr-3">
+              <span className="text-gray-400">$</span> code --install-extension Pattuv.transcribe
+            </span>
+            <i id="vscode-copy-icon" className="bi bi-clipboard text-gray-400 text-lg"></i>
+          </div>
+
+          <p className="text-xs text-gray-400 mt-3">
+            Paste the command in your terminal. You must have VS Code CLI installed.
+          </p>
+        </div>
+
     ),
     "VS Code Insiders": (
     
-      <div>
-          <a href="vscode-insiders:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full  transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode Insiders <i class="bi bi-arrow-up-right"></i></a>
+        <div>
+          <a
+            href="vscode-insiders:extension/Pattuv.transcribe"
+            className="btn bg-white text-black text-sm p-4 font-medium rounded-full transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
+          >
+            Install for VSCode Insiders <i id="vscode-insiders-icon" className="bi bi-arrow-up-right"></i>
+          </a>
 
-      </div>
+          <p className="text-sm text-gray-400 my-4">or</p>
+
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText("code-insiders --install-extension Pattuv.transcribe");
+              const icon = document.getElementById("vscode-insiders-copy-icon");
+              if (icon) {
+                icon.className = "bi bi-check text-green-400 text-lg";
+                setTimeout(() => {
+                  icon.className = "bi bi-clipboard text-gray-400 text-lg";
+                }, 2000);
+              }
+            }}
+            className="w-full bg-black rounded-lg p-2 border border-gray-600 mockcode text-xs flex items-center justify-between cursor-pointer hover:bg-gray-900 transition-colors"
+          >
+            <span className="mockcode mr-3">
+              <span className="text-gray-400">$</span> code-insiders --install-extension Pattuv.transcribe
+            </span>
+            <i id="vscode-insiders-copy-icon" className="bi bi-clipboard text-gray-400 text-lg"></i>
+          </div>
+
+          <p className="text-xs text-gray-400 mt-3">
+            Paste the command in your terminal. You must have VS Code Insiders CLI installed.
+          </p>
+        </div>
+
 
     ),
     Windsurf: (
@@ -68,7 +159,7 @@ function Install() {
     Manual: (
       <div>
 
-          <Link to="/tut" className="btn bg-white text-black text-sm p-4 font-medium rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install VSIX <i class="bi bi-arrow-up-right"></i></Link>
+          <Link to="/tut" className="btn bg-white text-black text-sm p-4 font-medium rounded-full  transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install VSIX <i class="bi bi-arrow-up-right"></i></Link>
           <p className="text-sm text-gray-400 my-4">
                 Works for every IDE
           </p>
@@ -149,7 +240,7 @@ function Install() {
         <div className="px-6 py-4 border-b border-gray-800">
           <h3 className="font-semibold text-lg">Install Transcribe</h3>
           <p className="text-xs text-gray-400 font-light mt-1">
-            Select your IDE below.
+            Select your IDE below. If none of the options work, try the manual installation guide.
           </p>
         </div>
 
