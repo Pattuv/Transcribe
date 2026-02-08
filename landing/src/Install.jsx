@@ -41,14 +41,14 @@ function Install() {
     ),
     "VS Code": (
       <div>
-          <a href="vscode:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode <i class="bi bi-arrow-up-right"></i></a>
+          <a href="vscode:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full  transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode <i class="bi bi-arrow-up-right"></i></a>
 
       </div>
     ),
     "VS Code Insiders": (
     
       <div>
-          <a href="vscode-insiders:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode Insiders <i class="bi bi-arrow-up-right"></i></a>
+          <a href="vscode-insiders:extension/Pattuv.transcribe"  className="btn bg-white text-black text-sm p-4 font-medium rounded-full  transition-transform duration-200 cursor-pointer inline-flex items-center justify-center">Install for VSCode Insiders <i class="bi bi-arrow-up-right"></i></a>
 
       </div>
 
