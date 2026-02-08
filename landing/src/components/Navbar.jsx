@@ -14,7 +14,7 @@ function Navbar() {
             className="brand-btn btn btn-ghost text-base md:text-lg font-semibold"
             href="/"
           >
-            <img src={logo} className="logo-img w-6 md:w-7 -mr-1" alt="" />
+            <img src={logo} className="logo-img w-4 md:w-5 " alt="" />
             <span className="brand-text">transcribe</span>
           </a>
         </div>
