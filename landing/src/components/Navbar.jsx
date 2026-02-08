@@ -27,16 +27,16 @@ function Navbar() {
           >
             <i className="bi bi-github"></i>
           </a>
-          <Link to="/tut" className="custom-btn text-sm font-medium -mr-0.5">
-            Guide
-          </Link>
-          <a
-            href="https://pratyushv.vercel.app/"
+          <a href="https://pratyushv.vercel.app/" className="custom-btn text-sm font-medium -mr-0.5"             
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer">
+            More by me
+          </a>
+          <a
+            href="/install"
             className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer"
           >
-            More by me
+            Install <i className="bi bi-download ml-1"></i>
           </a>
         </div>
         {/* Mobile Hamburger Menu */}

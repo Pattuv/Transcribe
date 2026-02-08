@@ -54,12 +54,14 @@ function Home() {
             AI tools.
           </p>
 
-          <button
-            onClick={() => document.getElementById("downloadmodal").showModal()}
-            className="block md:mx-auto bg-linear-to-t from-gray-400 border-none to-white p-3  font-medium px-7 text-black text-xs md:text-sm rounded-full mt-3 md:mt-4 border border-white/20 transition-transform hover:scale-105 hover:rotate-1 cursor-pointer"
+
+          <Link
+            to="/install"
+            className="block md:mx-auto bg-gradient-to-t from-gray-400 to-white p-3 font-medium px-7 text-black text-xs md:text-sm rounded-full mt-3 md:mt-4 transition-transform hover:scale-105 hover:rotate-1 cursor-pointer inline-flex items-center justify-center"
           >
             Install the extension <i className="bi bi-download ml-1"></i>
-          </button>
+          </Link>
+
         </div>
       </div>
 
@@ -155,14 +157,12 @@ function Home() {
         <p className="text-3xl font-medium text-white mb-5">
           Let's get hacking.
         </p>
-        <a
-          href="https://marketplace.visualstudio.com/items?itemName=Pattuv.transcribe"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="px-4 py-2 rounded-full text-sm font-medium bg-white text-black transform hover:scale-105 transition-transform duration-200 cursor-pointer"
+        <Link
+          to="/install"
+          className="px-4 py-2 rounded-full text-sm font-medium bg-white text-black transform hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center justify-center"
         >
           <i className="bi bi-download mr-1"></i> Install Transcribe
-        </a>
+        </Link>
       </section>
 
       <footer className="select-none bottom-0 left-0 w-full overflow-hidden -mt-30">
@@ -171,51 +171,55 @@ function Home() {
         </p>
       </footer>
 
-      <dialog id="downloadmodal" className="modal">
-        <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800">
-          <h3 className="font-semibold text-lg">Pick an Installation Method</h3>
-          <p className="text-xs text-gray-400 font-light mt-2">
-            You can either install Transcribe directly from the VSCode
-            Marketplace, or you can download the VSIX file for Visual Studio
-            based IDEs that have sandboxed marketplaces.
-          </p>
+{/*
+<dialog id="downloadmodal" className="modal">
+  <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800">
+    <h3 className="font-semibold text-lg">Pick an Installation Method</h3>
+    <p className="text-xs text-gray-400 font-light mt-2">
+      You can either install Transcribe directly from the VSCode
+      Marketplace, or you can download the VSIX file for Visual Studio
+      based IDEs that have sandboxed marketplaces.
+    </p>
 
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=Pattuv.transcribe"
-            target="_blank"
-            rel="noreferrer"
-            className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-          >
-            VSCode Extension Marketplace
-          </a>
-          <p className="text-xs text-gray-400 font-light mt-2">
-            You can also visit the Extensions tab in VSCode and search
-            "Transcribe".
-          </p>
+    <a
+      href="https://marketplace.visualstudio.com/items?itemName=Pattuv.transcribe"
+      target="_blank"
+      rel="noreferrer"
+      className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+    >
+      VSCode Extension Marketplace
+    </a>
 
-          <a
-            href="https://github.com/Pattuv/Transcribe/releases/download/v.1.0.3/transcribe-1.0.3.vsix"
-            target="_blank"
-            rel="noreferrer"
-            className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-          >
-            Install Manually via VSIX
-          </a>
-          <p className="text-sm font-light mt-2">
-            To learn how to install manually, visit{" "}
-            <Link to="/tut" className="link">
-              this page.
-            </Link>
-          </p>
+    <p className="text-xs text-gray-400 font-light mt-2">
+      You can also visit the Extensions tab in VSCode and search
+      "Transcribe".
+    </p>
 
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn bg-black text-white">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+    <a
+      href="https://github.com/Pattuv/Transcribe/releases/download/v.1.0.3/transcribe-1.0.3.vsix"
+      target="_blank"
+      rel="noreferrer"
+      className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+    >
+      Install Manually via VSIX
+    </a>
+
+    <p className="text-sm font-light mt-2">
+      To learn how to install manually, visit{" "}
+      <Link to="/tut" className="link">
+        this page.
+      </Link>
+    </p>
+
+    <div className="modal-action">
+      <form method="dialog">
+        <button className="btn bg-black text-white">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+*/}
+
     </>
   );
 }
