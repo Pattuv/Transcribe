@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -32,12 +33,14 @@ function Navbar() {
             rel="noreferrer">
             More by me
           </a>
-          <a
-            href="/install"
-            className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer"
+
+          <Link
+            to="/install"
+            className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer inline-flex items-center"
           >
             Install <i className="bi bi-download ml-1"></i>
-          </a>
+          </Link>
+
         </div>
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden flex-none relative">
