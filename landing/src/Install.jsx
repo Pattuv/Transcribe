@@ -65,7 +65,7 @@ function Install() {
           </div>
 
           <p className="text-xs text-gray-400 mt-3">
-            Paste the following command in your terminal.  You <br /> must have Cursor CLI installed.
+            Paste the following command in your terminal.  You must have Cursor CLI installed.
           </p>
         </div>
 
@@ -238,13 +238,13 @@ function Install() {
   return (
     <>
       <Navbar />
-      <div className="relative flex flex-col items-center justify-center min-h-[calc(90vh-64px)] px-6 md:px-10 overflow-hidden ">
+      <div className="relative flex flex-col items-center justify-center min-h-[calc(90vh-64px)] px-6 md:px-10 overflow-hidden max-lg:px-4">
         
         {/* ASCII image as the "heading" */}
         <img
           src={asciiBg}
           alt="ASCII Heading"
-          className="w-[30%] md:w-[30%] h-auto opacity-100 select-none pointer-events-none"
+          className="ascii-fade-in w-[30%] md:w-[30%] h-auto opacity-100 select-none pointer-events-none max-lg:w-[70%]"
         />
 
         {/* Two buttons with hover fade */}
@@ -284,7 +284,7 @@ function Install() {
         }
       }}
     >
-      <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800 p-0 max-w-4xl relative ">
+      <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800 p-0 max-w-4xl relative max-lg:max-w-[95vw] max-lg:m-4">
 
         {/* Close (X) button */}
         <button
@@ -304,14 +304,14 @@ function Install() {
         </div>
 
         {/* Body */}
-        <div className="flex py-7">
+        <div className="flex py-7 max-lg:flex-col max-lg:py-4">
           {/* Sidebar */}
-          <div className="w-2/6 ml-4  flex flex-col gap-2  ">
+          <div className="w-2/6 ml-4 flex flex-col gap-2 max-lg:w-full max-lg:ml-0 max-lg:flex-row max-lg:overflow-x-auto max-lg:pb-2 max-lg:px-4 max-lg:gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 text-sm transition pl-4 text-left rounded-xl  flex items-center gap-3
+                className={`flex-1 text-sm transition pl-4 text-left rounded-xl flex items-center gap-3 max-lg:flex-none max-lg:min-w-[120px]
                   ${
                     activeTab === tab
                       ? "bg-[#1a1a1a] text-white border border-gray-600"
@@ -331,21 +331,17 @@ function Install() {
           </div>
 
           {/* Main content (square) */}
-          <div className="w-4/6 flex items-center justify-center">
-            <div className="aspect-square w-[85%] bg-[#181818] border border-gray-800 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <h4 className="text-lg font-medium">{activeTab}</h4>
-                <p className="text-sm text-gray-400 mt-2">
-                {customDescriptions[activeTab] ??
-                  `Install Transcribe for ${activeTab}`}
+          <div className="w-4/6 flex mx-4 items-center justify-center max-lg:w-full max-lg:mx-0 max-lg:px-4">
+          <div className="aspect-square w-full max-w-4xl max-h-[80vh] bg-[#181818] border border-gray-800 rounded-lg flex items-center justify-center overflow-auto p-4 max-lg:aspect-auto max-lg:min-h-[200px]">
+            <div className="text-center w-full">
+              <h4 className="text-lg font-medium">{activeTab}</h4>
+              <p className="text-sm text-gray-400 mt-2">
+                {customDescriptions[activeTab] ?? `Install Transcribe for ${activeTab}`}
               </p>
-              <div className="mt-3">
-                {tabContent[activeTab]}
-              </div>
-
-
-              </div>
+              <div className="mt-3">{tabContent[activeTab]}</div>
             </div>
+          </div>
+
           </div>
         </div>
       </div>

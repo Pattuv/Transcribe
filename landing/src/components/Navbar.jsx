@@ -45,10 +45,13 @@ function Navbar() {
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden flex-none relative">
           <button
+            type="button"
             className="hamburger-btn text-2xl p-2"
+            onClick={() => setIsMenuOpen((open) => !open)}
             onMouseEnter={() => setIsMenuOpen(true)}
             onMouseLeave={() => setIsMenuOpen(false)}
             aria-label="Menu"
+            aria-expanded={isMenuOpen}
           >
             <i className="bi bi-list"></i>
           </button>
@@ -64,21 +67,27 @@ function Navbar() {
                   href="https://github.com/Pattuv/Transcribe"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <i className="bi bi-github"></i>
                   <span className="text-sm">GitHub</span>
                 </a>
-                <Link to="/tut" className="custom-btn text-center">
-                  Guide
-                </Link>
                 <a
                   href="https://pratyushv.vercel.app/"
+                  className="custom-btn text-center"
                   target="_blank"
                   rel="noreferrer"
-                  className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer text-center"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   More by me
                 </a>
+                <Link
+                  to="/install"
+                  className="work-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:scale-105 transition-transform duration-200 cursor-pointer text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Install <i className="bi bi-download ml-1"></i>
+                </Link>
               </div>
             </div>
           )}

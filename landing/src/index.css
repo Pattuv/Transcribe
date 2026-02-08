@@ -12,6 +12,10 @@ html, body, #root {
   height: auto;
 }
 
+
+
+
+
 .mockcode {
   font-family: monospace, sans-serif;
   color: white;
@@ -143,5 +147,26 @@ html, body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.ascii-fade-in {
+  animation: asciiFadeIn 2.5s ease-out 0.5s both;
+}
+
+@keyframes asciiFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive: only below lg (1024px). lg and up = unchanged. */
+@media (max-width: 1023px) {
+  .responsive-footer-text {
+    font-size: clamp(2.5rem, 12vw, 5rem) !important;
+    transform: translateY(28%);
   }
 }

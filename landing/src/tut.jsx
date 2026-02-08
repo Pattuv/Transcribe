@@ -4,13 +4,13 @@ function Tut() {
   return (
     <>
       <Navbar />
-      <div className="text-white px-6 md:px-10 py-10">
+      <div className="text-white px-6 md:px-10 py-10 max-lg:px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-semibold">
             Manual Installation Guide (VSIX)
           </h1>
           <p className="text-sm md:text-base text-gray-300 mt-3 leading-relaxed">
-            This page walks you through installing and using{" "}
+            This section walks you through installing and using{" "}
             <span className="font-semibold">Transcribe</span> manually, a VS
             Code extension that copies your project’s file structure in your
             IDEs. This is necessary for IDEs which do not fully sync with VSCode

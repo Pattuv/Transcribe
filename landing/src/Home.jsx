@@ -47,8 +47,8 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className="mt-6 md:mt-7 text-white px-9">
-        <div className="w-125 mx-auto text-left md:text-center max-w-2xl">
+      <div className="mt-6 md:mt-7 text-white px-9 max-lg:px-4">
+        <div className="w-125 mx-auto text-left md:text-center max-w-2xl max-lg:w-full">
           <p className="text-lg md:text-2xl  font-medium">
             Effortlessly copy your file structure from your IDE to your favorite
             AI tools.
@@ -65,8 +65,8 @@ function Home() {
         </div>
       </div>
 
-      <div className="my-6 px-9 flex justify-center">
-        <div className="cursor-pointer relative rounded-md w-full max-w-md md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w6xl overflow-hidden">
+      <div className="my-6 px-9 flex justify-center max-lg:px-4">
+        <div className="cursor-pointer relative rounded-md w-full max-w-md md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-6xl max-lg:max-w-4xl overflow-hidden">
           <video
             ref={videoRef}
             src={demo}
@@ -98,16 +98,16 @@ function Home() {
         </div>
       </div>
 
-      <div className="text-left md:text-center px-9">
+      <div className="text-left md:text-center px-9 max-lg:px-4">
         <p className="text-sm text-gray-400 font-light mt-10">
           Works with your favorite tools
         </p>
-        <img src={tools} alt="tools" className="h-auto w-110 md:mx-auto my-5" />
+        <img src={tools} alt="tools" className="h-auto w-110 md:mx-auto my-5 max-lg:w-full max-lg:max-w-xl" />
       </div>
 
-      <section className="space-y-10 px-5  mt-20  mx-5">
-        <div className=" flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6 h-125 bg-[#202020] rounded-3xl px-7 py-70 w-300 mx-auto">
-          <div className=" md:w-3/8 text-center md:text-left flex flex-col justify-center mx-auto">
+      <section className="space-y-10 px-5 mt-20 mx-5 max-lg:px-4 max-lg:mx-2">
+        <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6 h-125 bg-[#202020] rounded-3xl px-7 py-70 w-300 mx-auto max-lg:w-full max-lg:h-auto max-lg:min-h-0 max-lg:py-8 max-lg:px-5">
+          <div className="md:w-3/8 text-center md:text-left flex flex-col justify-center mx-auto max-lg:w-full">
             <p className="text-xl text-white font-medium mb-2">
               Copy your file structure in one click. <br />
               <span className="text-gray-400">
@@ -119,27 +119,27 @@ function Home() {
               output, regardless of what directory you wish to copy.
             </p>
           </div>
-          <div className=" flex items-center justify-center">
+          <div className="flex items-center justify-center max-lg:w-full">
             <img
               src={copyImg}
               alt="File structure example"
-              className="w-full rounded-xl shadow-lg h-125 object-cover"
+              className="w-full rounded-xl shadow-lg h-125 object-cover max-lg:h-64 max-lg:object-contain"
             />
           </div>
         </div>
 
-        <div className=" flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6 h-125 bg-[#202020] rounded-3xl px-7 py-70 w-300 mx-auto">
-          <div className="">
+        <div className="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-6 h-125 bg-[#202020] rounded-3xl px-7 py-70 w-300 mx-auto max-lg:w-full max-lg:h-auto max-lg:min-h-0 max-lg:py-8 max-lg:px-5">
+          <div className="max-lg:w-full max-lg:order-2">
             <video
               src={settings}
-              className="w-full rounded-lg shadow-lg h-125 object-cover"
+              className="w-full rounded-lg shadow-lg h-125 object-cover max-lg:h-64 max-lg:object-contain"
               playsInline
               muted
               loop
               autoPlay
             />
           </div>
-          <div className="md:w-4/8 text-center md:text-left flex flex-col justify-center">
+          <div className="md:w-4/8 text-center md:text-left flex flex-col justify-center max-lg:w-full max-lg:order-1">
             <p className="text-xl text-center md:text-right text-white font-medium mb-2">
               Large dependencies destroying your structure? <br />
               <span className="text-gray-400">Transcribe can ignore them.</span>
@@ -153,7 +153,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="text-left md:text-center px-9 py-5 mt-10">
+      <section className="text-left md:text-center px-9 py-5 mt-10 max-lg:px-4">
         <p className="text-3xl font-medium text-white mb-5">
           Let's get hacking.
         </p>
@@ -165,60 +165,11 @@ function Home() {
         </Link>
       </section>
 
-      <footer className="select-none bottom-0 left-0 w-full overflow-hidden -mt-30">
-        <p className="text-[10rem] font-semibold text-center p-0 m-0 translate-y-[35%] text-[#171717]">
+      <footer className="select-none bottom-0 left-0 w-full overflow-hidden -mt-30 max-lg:-mt-16">
+        <p className="text-[10rem] font-semibold text-center p-0 m-0 translate-y-[35%] text-[#171717] responsive-footer-text">
           transcribe
         </p>
       </footer>
-
-{/*
-<dialog id="downloadmodal" className="modal">
-  <div className="modal-box bg-[#0f0f0f] text-white border border-gray-800">
-    <h3 className="font-semibold text-lg">Pick an Installation Method</h3>
-    <p className="text-xs text-gray-400 font-light mt-2">
-      You can either install Transcribe directly from the VSCode
-      Marketplace, or you can download the VSIX file for Visual Studio
-      based IDEs that have sandboxed marketplaces.
-    </p>
-
-    <a
-      href="https://marketplace.visualstudio.com/items?itemName=Pattuv.transcribe"
-      target="_blank"
-      rel="noreferrer"
-      className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-    >
-      VSCode Extension Marketplace
-    </a>
-
-    <p className="text-xs text-gray-400 font-light mt-2">
-      You can also visit the Extensions tab in VSCode and search
-      "Transcribe".
-    </p>
-
-    <a
-      href="https://github.com/Pattuv/Transcribe/releases/download/v.1.0.3/transcribe-1.0.3.vsix"
-      target="_blank"
-      rel="noreferrer"
-      className="w-full block text-center py-3 px-4 mt-4 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-    >
-      Install Manually via VSIX
-    </a>
-
-    <p className="text-sm font-light mt-2">
-      To learn how to install manually, visit{" "}
-      <Link to="/tut" className="link">
-        this page.
-      </Link>
-    </p>
-
-    <div className="modal-action">
-      <form method="dialog">
-        <button className="btn bg-black text-white">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
-*/}
 
     </>
   );
