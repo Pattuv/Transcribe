@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import { useRef, useState, useEffect } from "react";
 import tools from "./assets/tools.png";
-import demo from "./assets/demo.mp4";
+import demo from "./assets/demo.mov";
 import copyImg from "./assets/images/copy.png";
 import settings from "./assets/settings.mp4";
 import { Link } from "react-router-dom";
